@@ -23,7 +23,7 @@ Template.personrow.events({
     }
 })
 
-Template.chorerow.helpers({
+Template.showchores.helpers({
     choreslist() {return Chores.find()},
 })
 
@@ -32,5 +32,10 @@ Template.addTask.events({
         const type = instance.$('#type').val();
         Chores.insert({type:type});
     }
+})
 
+Template.chorerow.events({
+    'click input'(elt, instance) {
+        Chores.remove(this.chore._id);
+    }
 })

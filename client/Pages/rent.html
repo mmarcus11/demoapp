@@ -1,4 +1,47 @@
 <template name="rent">
-  <h1>Info Page!</h1>
-  <a href="https://en.wikipedia.org/wiki/Information"><img src="http://www.jiovanni.fr/wp-content/uploads/2016/01/Entreprise-de-communication-6.jpg" width="95%"></a><br><br>
+<div class="row">
+  <div class="col-md-12 bg-info">
+    <h1>Rent</h1>
+    <select>
+      <option value="june"><time datetime="2017-06">June 2017</time></option>
+      <option value="july"><time datetime="2017-07">July 2017</time></option>
+      <option value="aug"><time datetime="2017-08">August 2017</time></option>
+      <option value="sept"><time datetime="2017-09">September 2017</time></option>
+      <option value="oct"><time datetime="2017-10">October 2017</time></option>
+      <option value="nov"><time datetime="2017-11">November 2017</time></option>
+      <option value="dec"><time datetime="2017-12">December 2017</time></option>
+      <option value="jan"><time datetime="2018-01">January 2018</time></option>
+      <option value="feb"><time datetime="2018-02">February 2018</time></option>
+      <option value="mar"><time datetime="2018-03">March 2018</time></option>
+      <option value="apr"><time datetime="2018-04">April 2018</time></option>
+      <option value="may"><time datetime="2018-05">May 2018</time></option>
+    </select>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <th>Person</th><th>Rent Status</th>
+      </thead>
+      <tbody>
+        {{#each person in house}}
+      		{{> houserow t=person}}
+    		{{/each}}
+      </tbody>
+      <tfoot>
+        <td>Total Rent</td>
+      </tfoot>
+    </table>
+
+  </div>
+  <button class="btn btn-info">Update</button>
+</div>
+</template>
+
+<template name="houserow">
+   <tr>
+   	  <td>{{t.name}}</td>
+   	  <td><form>
+        <input type="radio" name="status" value="paid"> Paid<br>
+        <input type="radio" name="status" value="owed"> Owed<br>
+        <input type="radio" name="status" value="late!"> Late!
+      </form></td>
+   </tr>
 </template>

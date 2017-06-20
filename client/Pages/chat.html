@@ -11,6 +11,7 @@
         <option value="roommate1">Roommate1</option>
         <option value="roommate2">Roommate2</option>
         <option value="roommate3">Roommate3</option>
+        {{> roommateSelector}}
       </select>
       <input type="text"  class="js-chatinput" >
       <br><br>
@@ -44,6 +45,18 @@
       </ul>
     </div>
 </template>
+
+<!-- <template name="roommateName">
+  {{person.name}}
+</template>
+
+<template name="roommateSelector">
+  <select>
+    {{#each p in peoplelist}}
+      <option value="roommate">{{> roommateName person=p}}</option>
+    {{/each}}
+  </select>
+</template> -->
 
 <template name="chatline">
   <li>

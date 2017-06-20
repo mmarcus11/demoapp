@@ -49,14 +49,21 @@
   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 </template>
 
+<template name="addTask">
+    <input type="text" id="type"><br>
+    <button id="addtask" class="btn btn-sm btn-warning">
+      Create
+    </button><br><br>
+</template>
+
 <template name="showchores">
-  <ul>
+
   {{#each c in choreslist}}
-      <li>{{> chorerow chore=c}}</li>
+      {{> chorerow chore=c}}
   {{/each}}
-  </ul>
+
 </template>
 
 <template name="chorerow">
-  {{chore.type}}<br>
+  <input type="checkbox"> {{chore.type}}<br>
 </template>
