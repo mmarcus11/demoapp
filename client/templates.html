@@ -1,6 +1,6 @@
 <!--The head is going to be like the title in the tab name-->
 <head>
-  <title>DemoApp 2017</title>
+  <title>Roommate Helper</title>
 </head>
 
 <template name="addPerson">
@@ -47,4 +47,16 @@
 <template name="personrow">
   {{person.name}}: {{person.email}}
   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+</template>
+
+<template name="showchores">
+  <ul>
+  {{#each c in choreslist}}
+      <li>{{> chorerow chore=c}}</li>
+  {{/each}}
+  </ul>
+</template>
+
+<template name="chorerow">
+  {{chore.type}}<br>
 </template>

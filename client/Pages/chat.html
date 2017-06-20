@@ -1,4 +1,55 @@
 <template name="chat">
-  <h1>About this app</h1>
-  <p>Author: Molly</p>
+  <div>
+    <h1>Chat and Discuss</h1>
+    <p>Discuss roommate issues</p>
+  </div>
+  <hr>
+    <div class="col-md-5 bg-success">
+      <h2>Chat</h2>
+      <select>
+        <option value="all">House</option>
+        <option value="roommate1">Roommate1</option>
+        <option value="roommate2">Roommate2</option>
+        <option value="roommate3">Roommate3</option>
+      </select>
+      <input type="text"  class="js-chatinput" >
+      <br><br>
+      <button class="btn btn-info btn-large js-chatsubmit">Send</button>
+      <ul>
+        {{#each chat in chatlines}}
+        <li><b>{{userEmail chat.createdBy}}</b>
+          / <i>{{chat.createdAt}}</i>
+          <br>
+          {{chat.text}}
+          <hr>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="col-md-6 col-md-offset-1 bg-info">
+      <h2>Forums</h2>
+      <input type="text"  class="js-chatinput" >
+      <br>
+      <button class="btn btn-info btn-large js-chatsubmit">Submit</button>
+      <ul>
+        {{#each chat in chatlines}}
+        <li><b>{{userEmail chat.createdBy}}</b>
+          / <i>{{chat.createdAt}}</i>
+          <br>
+          {{chat.text}}
+          <hr>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+</template>
+
+<template name="chatline">
+  <li>
+    {{c.text}}
+    {{c.createdAt}}
+    {{author c.createdBy}}
+    {{c.createdBy}}
+  </li>
 </template>
