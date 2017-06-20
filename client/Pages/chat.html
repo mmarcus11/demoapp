@@ -3,7 +3,7 @@
     <h1>Chat and Discuss</h1>
     <p>Discuss roommate issues</p>
   </div>
-  <hr>
+    <hr>
     <div class="col-md-5 bg-success">
       <h2>Chat</h2>
       <select>
@@ -11,7 +11,6 @@
         <option value="roommate1">Roommate1</option>
         <option value="roommate2">Roommate2</option>
         <option value="roommate3">Roommate3</option>
-        {{> roommateSelector}}
       </select>
       <input type="text"  class="js-chatinput" >
       <br><br>
@@ -45,18 +44,6 @@
       </ul>
     </div>
 </template>
-
-<!-- <template name="roommateName">
-  {{person.name}}
-</template>
-
-<template name="roommateSelector">
-  <select>
-    {{#each p in peoplelist}}
-      <option value="roommate">{{> roommateName person=p}}</option>
-    {{/each}}
-  </select>
-</template> -->
 
 <template name="chatline">
   <li>
