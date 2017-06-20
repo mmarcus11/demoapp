@@ -9,14 +9,18 @@ Template.addPerson.events({
         console.log('adding '+name);
         instance.$('#name').val("");
         instance.$('#email').val("");
-        Roommate.insert({name:name, email:email});
+        var roommate = {
+          name:name,
+          email:email
+        }
+        Meteor.call('roommate.insert',roommate);
 
     }
 })
 
 Template.personrow.events({
     'click span'(elt,instance) {
-        Roommate.remove(this.person._id);
+        Meteor.call('roommate.remove', this.person._id);
         //if (this.person.ownder==Meteor.userID()){
           //People.remoce(this.person._id);
         //}
@@ -30,12 +34,13 @@ Template.showchores.helpers({
 Template.addTask.events({
     'click button'(elt,instance){
         const type = instance.$('#type').val();
-        Chores.insert({type:type});
+        Meteor.call('chores.insert', {type});
     }
 })
 
 Template.chorerow.events({
     'click input'(elt, instance) {
-        Chores.remove(this.chore._id);
+        var id = this.chore._id
+        Meteor.call('chores.remove', id);
     }
 })
