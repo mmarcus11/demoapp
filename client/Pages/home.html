@@ -6,10 +6,7 @@
     			<h2>Personal</h2>
     			<form>
     				{{> showchores}}<br>
-            <br><strong>Create new Personal Task</strong><br>
-            {{> addTask}}<br>
     			</form>
-          <hr>
     			<h2>House</h2>
     			<form>
     				<input type="checkbox" name="choretype" value="chore"> Feed Cat<br>
@@ -20,11 +17,11 @@
       <div class="col-md-5 col-md-offset-2 bg-warning">
     			<h1>Add Task</h1>
           <h2>Personal</h2>
-
+          {{> addTask}}
           <h2>House</h2>
     			<p>Here you can send quick task requests to your roommates or whole housing group.</p>
     			<form>
-    				<h2>Roommate:</h2>
+    				<h3>Roommate:</h3>
     					<select>
     						<option value="house">All</option>
     						<option value="roommate1">Roommate1</option>
@@ -33,10 +30,10 @@
     					</select>
 
 
-    				<h2>Request</h2>
+    				<h3>Request</h3>
     					<input type="text" name="task" value="Task"> <br>
 
-    				<h2>Message</h2>
+    				<h3>Message</h3>
     					<textarea rows="4" cols-lg="25">Message</textarea> <br><br>
 
     				<button class="btn btn-info btn-large js-chatsubmit">Submit</button><br><br>
