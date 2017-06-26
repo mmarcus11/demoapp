@@ -1,0 +1,18 @@
+
+h1, h2 {
+  color: #026FB1;
+  font-family: palatino;
+}
+
+form {
+  font-style: oblique;
+}
+
+.nav{
+  background-color: #EFF9FF;
+}
+
+.container{
+  background-color: #EFF4FF;
+  align-content: center;
+}

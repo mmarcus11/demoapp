@@ -1,6 +1,7 @@
 <!--The head is going to be like the title in the tab name-->
 <head>
   <title>Roommate Helper</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <template name="addPerson">
@@ -14,22 +15,20 @@
 <template name="layout">
   <div class="container">
     <h1>Roommate Helper</h1>
-
-    <nav class="navbar navbar-default">
-      <div class="collapse navbar-collapse" id="toolbar">
-        <ul class="nav navbar-nav">
-          <li><a href="/">Home</a></li>
-          <li><a href="/myhouse">My House</a></li>
-          <li><a href="/chat">Chat and Discuss</a></li>
-          <li><a href="/rent">Rent</a></li>
-          <li><a href="/utilities">Utilities</a></li>
-          <li><a href="/resources">Resources</a></li>
-        </ul>
-        <ul class="nav navbar-right">
-          {{> loginButtons}}
-        </ul>
-    </div>
-
+    <nav>
+        <div class="collapse navbar-collapse" id="toolbar">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/myhouse">My House</a></li>
+            <li><a href="/chat">Chat and Discuss</a></li>
+            <li><a href="/rent">Rent</a></li>
+            <li><a href="/utilities">Utilities</a></li>
+            <li><a href="/resources">Resources</a></li>
+          </ul>
+          <ul class="nav navbar-right">
+            {{> loginButtons}}
+          </ul>
+        </div>
     </nav>
     <hr>
     {{> yield}} <!--this is where the page content goes-->
