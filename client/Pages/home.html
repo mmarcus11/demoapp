@@ -20,24 +20,7 @@
           {{> addTask}}
           <h2>House</h2>
     			<p>Here you can send quick task requests to your roommates or whole housing group.</p>
-    			<form>
-    				<h3>Roommate:</h3>
-    					<select>
-    						<option value="house">All</option>
-    						<option value="roommate1">Roommate1</option>
-    						<option value="roommate2">Roommate2</option>
-    						<option value="roommate3">Roommate3</option>
-    					</select>
-
-
-    				<h3>Request</h3>
-    					<input type="text" name="task" value="Task"> <br>
-
-    				<h3>Message</h3>
-    					<textarea rows="4" cols-lg="25">Message</textarea> <br><br>
-
-    				<button class="btn btn-info btn-large js-chatsubmit">Submit</button><br><br>
-    			</form>
+    			{{> addHouseTask}}
     		</div>
     <!--{{else}}
         <div>

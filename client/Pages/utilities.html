@@ -2,16 +2,37 @@
 <div class="row">
   <div class="col-md-12 bg-info">
     <h1>Utilities</h1>
-
+    {{> addUtility}}
+    <hr>
     <table class="table table-bordered">
       <thead>
         <th>Utility Type</th><th>Per Person Amount</th><th>Total Amount</th>
       </thead>
       <tbody>
-        <td>Electricity</td><td>$$</td><td>$$</td>
+        {{> showUtilities}}
       </tbody>
     </table>
 
   </div>
 </div>
+</template>
+
+<template name="utilityRow">
+  <td>{{utilities.name}}</td><td>{{utilities.personAmt}}</td><td>{{utilities.amt}}</td><td>{{utilities.due}}</td>
+</template>
+
+<template name="showUtilities">
+  {{#each u in utilityList}}
+      <tr>{{> utilityRow utility=u}}</tr>
+  {{/each}}
+</template>
+
+<template name="addUtility">
+    <form>
+        Utility Name      <input type="text" id="name"><br>
+        Per Person Amount <input type="text" id="personAmt"><br>
+        Total Amount      <input type="text" id="amt"><br>
+        Due Date          <input type="date" id="due">
+    </form><br>
+    <button id="addUtility" class="btn btn-sm btn-danger">Add</button>
 </template>
