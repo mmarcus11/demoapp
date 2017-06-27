@@ -18,7 +18,7 @@
     </select>
     <table class="table table-bordered table-striped">
       <thead>
-        <th>Person</th><th>Rent Status</th>
+        <th>Person</th><th>Rent Status</th><th>Amount</th>
       </thead>
       <tbody>
         {{#each person in house}}
@@ -26,7 +26,7 @@
     		{{/each}}
       </tbody>
       <tfoot>
-        <td>Total Rent</td>
+        <td><strong>Total Rent:</strong> amt@@@</td>
       </tfoot>
     </table>
 
@@ -43,5 +43,6 @@
         <input type="radio" name="status" value="owed"> Owed<br>
         <input type="radio" name="status" value="late!"> Late!
       </form></td>
+      <td>amt@@@</td>
    </tr>
 </template>

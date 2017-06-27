@@ -1,6 +1,5 @@
 const house =
-
-
+  
 Template.rent.helpers(
  {
    house: function(){
