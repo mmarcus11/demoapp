@@ -16,3 +16,18 @@ form {
   align-content: center;
   /*display: flex;*/
 }
+
+  body {
+    background: #EFF4FF;
+    display: flex;
+  }
+  #ToDo {
+    background: #D0DCF6;
+    padding: inherit;
+    padding-top: 1%;
+  }
+  #Tasks{
+    background: #FFF2C3;
+    padding: inherit;
+    padding-top: 1%;
+  }
