@@ -1,12 +1,13 @@
 <template name="main">
   <h1>Home</h1>
   <!--{{#if currentUser}}-->
-      <div class="col-md-5 bg-info">
+      <div class="col-md-5 bg-info" id="ToDo">
         <h1>To Do:</h1>
     			<h2>Personal</h2>
     			<form>
     				{{> showchores}}<br>
     			</form>
+          <hr>
     			<h2>House</h2>
     			<form>
     				<input type="checkbox" name="choretype" value="chore"> Feed Cat<br>
@@ -14,10 +15,12 @@
     			</form>
     			<br>
       </div>
-      <div class="col-md-5 col-md-offset-2 bg-warning">
+      <div class="col-md-5 col-md-offset-2 bg-warning" id="Tasks">
     			<h1>Add Task</h1>
           <h2>Personal</h2>
+          <p>Set personal chores and tasks for yourself</p>
           {{> addTask}}
+          <hr>
           <h2>House</h2>
     			<p>Here you can send quick task requests to your roommates or whole housing group.</p>
     			{{> addHouseTask}}

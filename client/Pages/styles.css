@@ -7,12 +7,12 @@ h1, h2 {
 form {
   font-style: oblique;
 }
-
 .nav{
   background-color: #EFF9FF;
+  diplay: flex;
 }
-
 .container{
   background-color: #EFF4FF;
   align-content: center;
+  /*display: flex;*/
 }

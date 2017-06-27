@@ -1,7 +1,35 @@
 <!--The head is going to be like the title in the tab name-->
 <head>
   <title>Roommate Helper</title>
+  <meta charset="utf-8">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .flex {
+      /* basic styling */
+        width: 350px;
+        height: 200px;
+        border: 1px solid #555;
+        font: 14px Arial;
+
+        /* flexbox setup */
+        display: flex;
+        flex-direction: row;
+    }
+    body {
+      background: #EFF4FF;
+      display: flex;
+    }
+    #ToDo {
+      background: #D0DCF6;
+      padding: inherit;
+      padding-top: 1%;
+    }
+    #Tasks{
+      background: #FFF2C3;
+      padding: inherit;
+      padding-top: 1%;
+    }
+  </style>
 </head>
 
 <template name="addPerson">
@@ -16,7 +44,7 @@
   <div class="container">
     <h1>Roommate Helper</h1>
     <nav>
-        <div class="collapse navbar-collapse" id="toolbar">
+        <div id="toolbar">
           <ul class="nav navbar-nav">
             <li><a href="/">Home</a></li>
             <li><a href="/myhouse">My House</a></li>
@@ -29,7 +57,7 @@
             {{> loginButtons}}
           </ul>
         </div>
-    </nav>
+    </nav><br><br>
     <hr>
     {{> yield}} <!--this is where the page content goes-->
   </div>
