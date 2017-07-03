@@ -1,6 +1,6 @@
 <template name="main">
   <h1>Home</h1>
-  <!--{{#if currentUser}}-->
+  {{#if currentUser}}
       <div class="col-md-5 bg-info" id="ToDo">
         <h1>To Do:</h1>
     			<h2>Personal</h2>
@@ -25,9 +25,9 @@
     			<p>Here you can send quick task requests to your house.</p>
     			{{> addHouseTask}}
     		</div>
-    <!--{{else}}
+    {{else}}
         <div>
           Sorry you do not have access to this page. Please login or sign-up!
         </div>
-    {{/if}}-->
+    {{/if}}
 </template>
