@@ -1,3 +1,5 @@
+Meteor.subscribe("utilities");
+
 Template.showUtilities.helpers({
   utilityList() {return Utilities.find()},
 })
@@ -8,11 +10,12 @@ Template.addUtility.events({
         const personAmt = instance.$('#personAmt').val();
         const amt = instance.$('#amt').val();
         const due = instance.$('#due').val();
+        const payer = instance.$('#payer').val();
         var utility = {
           name:name,
           personAmt:personAmt,
-          amt:amt,
-          due:due
+          due:due,
+          payer:payer
         }
         Meteor.call('utility.insert', utility);
     }

@@ -1,3 +1,18 @@
+// export const Chores = new Mongo.Collection{'chores'};
+
+
+Meteor.publish("chores", function(){
+  return Chores.find();
+});
+
+Meteor.publish("roommate", function(){
+  return Roommate.find();
+});
+
+Meteor.publish("utilities", function(){
+  return Utilities.find();
+});
+
 Meteor.methods({
   'chores.insert': function(chore){
       Chores.insert(chore);
@@ -17,9 +32,5 @@ Meteor.methods({
 
   'utility.insert': function(utility){
       Utilities.insert(utility);
-  },
-
-  // 'housechores.insert': function(chore){
-  //
-  // }
+  }
 });

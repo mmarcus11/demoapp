@@ -1,3 +1,5 @@
+Meteor.subscribe("roommate");
+
 Template.showpeople.helpers({
   peoplelist() {return Roommate.find()},
 })
@@ -27,6 +29,8 @@ Template.personrow.events({
     }
 })
 
+Meteor.subscribe("chores");
+
 Template.showchores.helpers({
     choreslist() {return Chores.find()},
 })
@@ -37,9 +41,15 @@ Template.addTask.events({
         const category = 'personal';
         var chore={
           type:type,
-          category:category
+          owner: Meteor.userId()
         }
         Meteor.call('chores.insert', chore);
+    }
+})
+
+Template.chorerow.helpers({
+    isOwner: function(){
+      return
     }
 })
 
@@ -50,17 +60,17 @@ Template.chorerow.events({
     }
 })
 
-Template.addHouseTask.events({
-    'click button'(elt,instance){
-        const recipient = instance.$('#recipient').val();
-        const category='house';
-        // if (recipient=='All'){
-        //     category='house';
-        // }
-        var chore={
-          type:type,
-          category:category
-        }
-        Meteor.call('chores.insert', chore);
-    }
-})
+// Template.addHouseTask.events({
+//     'click button'(elt,instance){
+//         const recipient = instance.$('#recipient').val();
+//         const category='house';
+//         // if (recipient=='All'){
+//         //     category='house';
+//         // }
+//         var chore={
+//           type:type,
+//           category:category
+//         }
+//         Meteor.call('chores.insert', chore);
+//     }
+// })

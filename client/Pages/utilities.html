@@ -4,9 +4,9 @@
     <h1>Utilities</h1>
     {{> addUtility}}
     <hr>
-    <table class="table table-bordered">
+    <table class="table table-bordered table-striped">
       <thead>
-        <th>Utility Type</th><th>Per Person Amount</th><th>Total Amount</th>
+        <th>Utility Type</th><th> Per Person Amount</th><th> Due By:</th><th> Pay Back:</th>
       </thead>
       <tbody>
         {{> showUtilities}}
@@ -18,7 +18,7 @@
 </template>
 
 <template name="utilityRow">
-  <td>{{utility.name}}</td><td>{{utility.personAmt}}</td><td>{{utility.amt}}</td><td>{{utility.due}}</td>
+  <td>{{utility.name}}</td><td>{{utility.personAmt}}</td><td>{{utility.due}}</td><td>{{utility.payer}}</td>
 </template>
 
 <template name="showUtilities">
@@ -31,8 +31,8 @@
     <form>
         Utility Name      <input type="text" id="name"><br>
         Per Person Amount <input type="text" id="personAmt"><br>
-        Total Amount      <input type="text" id="amt"><br>
-        Due Date          <input type="date" id="due">
+        Due Date          <input type="date" id="due"><br>
+        Payer             <input type="text" id="payer">
     </form><br>
     <button id="addUtility" class="btn btn-sm btn-danger">Add</button>
 </template>
