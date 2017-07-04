@@ -1,37 +1,47 @@
 <template name="rent">
-<div class="row">
-  <div class="col-md-12 bg-info">
-    <h1>Rent</h1>
-    <form>
-      <input type="date">
-    </form>
-    <table class="table table-bordered table-striped">
-      <thead>
-        <th>Person</th><th>Rent Status</th><th>Amount</th>
-      </thead>
-      <tbody>
-        {{#each person in house}}
-      		{{> houserow t=person}}
-    		{{/each}}
-      </tbody>
-      <tfoot>
-        <td><strong>Total Rent:</strong> amt@@@</td>
-      </tfoot>
-    </table>
-
-  </div>
-  <button class="btn btn-info">Update</button>
-</div>
+    <div class="row">
+        <div class="col-md-12 bg-info">
+          <h1>Rent</h1>
+          Edit <input type="checkbox" id="edit">
+          {{#if editor}}
+              {{> edit}}
+          {{else}}
+              <table class="table table-bordered table-striped">
+                <thead>
+                  <th>Person</th><th>Month</th><th>Amount</th><th>Rent Status</th>
+                </thead>
+                <tbody>
+                  {{#each rent in house}}
+                    {{> houserow rent=rent}}
+                  {{/each}}
+                </tbody>
+              </table>
+          {{/if}}
+          <hr>
+          {{> edit}}
+        </div>
+    </div>
 </template>
 
 <template name="houserow">
    <tr>
-   	  <td>{{t.name}}</td>
-   	  <td><form>
-        <input type="radio" name="status" value="paid"> Paid<br>
-        <input type="radio" name="status" value="owed"> Owed<br>
-        <input type="radio" name="status" value="late!"> Late!
-      </form></td>
-      <td>amt@@@</td>
+   	  <td><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> {{rent.name}} </td>
+      <td>{{rent.date}}</td>
+      <td>{{rent.amount}}</td>
+   	  <td>{{rent.status}}</td>
+
    </tr>
+</template>
+
+<template name="edit">
+  <h2>Add/Edit</h2>
+    <form>
+      <input type="text" id="name" placeholder="Name"><br>
+      <input type="text" id="date" placeholder="Month"><br>
+      <input type="text" id="amount" placeholder="Amount"><br>
+      <input type="radio" name="status" value="Paid"> Paid<br>
+      <input type="radio" name="status" value="Owed"> Owed<br>
+      <input type="radio" name="status" value="Late!"> Late!<br><br>
+    </form>
+    <button id='submit' class='btn btn-info'>Submit</button><button id='edit' class='btn btn-info'>Edit</button>
 </template>

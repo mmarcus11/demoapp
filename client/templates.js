@@ -13,7 +13,8 @@ Template.addPerson.events({
         instance.$('#email').val("");
         var roommate = {
           name:name,
-          email:email
+          email:email,
+          id: Meteor.userId()
         }
         Meteor.call('roommate.insert',roommate);
 
@@ -38,7 +39,6 @@ Template.showchores.helpers({
 Template.addTask.events({
     'click button'(elt,instance){
         const type = instance.$('#type').val();
-        const category = 'personal';
         var chore={
           type:type,
           owner: Meteor.userId()
@@ -47,11 +47,11 @@ Template.addTask.events({
     }
 })
 
-Template.chorerow.helpers({
-    isOwner: function(){
-      return
-    }
-})
+// Template.showchores.helpers({
+//     isOwner: function(){
+//       return currentUser === Meteor.userId();
+//     }
+// })
 
 Template.chorerow.events({
     'click input'(elt, instance) {

@@ -13,6 +13,10 @@ Meteor.publish("utilities", function(){
   return Utilities.find();
 });
 
+Meteor.publish("rent", function(){
+  return Rent.find();
+})
+
 Meteor.methods({
   'chores.insert': function(chore){
       Chores.insert(chore);
@@ -32,5 +36,18 @@ Meteor.methods({
 
   'utility.insert': function(utility){
       Utilities.insert(utility);
+  },
+
+  'rent.remove': function(id){
+      Rent.remove(id);
+  },
+
+  'rent.insert': function(rent){
+      Rent.insert(rent);
   }
+
+  // 'rent.update': function(name, date, status, amount){
+  //     console.log('updated?');
+  //     Rent.update({name:id.name, date:id.date}, {$set:{amount:amount}});
+  // }
 });
