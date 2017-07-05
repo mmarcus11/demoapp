@@ -13,3 +13,24 @@
   </main>
 
 </template>
+
+<template name="addPerson">
+    Name: <input type="text" id="name"><br>
+    Email: <input type="text" id="email"><br><br>
+    <button id="addperson" class="btn btn-primary">
+      Add Roommate
+    </button><br><br>
+</template>
+
+<template name="showpeople">
+  <ul>
+  {{#each p in peoplelist}}
+    <li>{{> personrow person=p}}</li>
+  {{/each}}
+  </ul>
+</template>
+
+<template name="personrow">
+  {{person.name}}: {{person.email}}
+  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+</template>

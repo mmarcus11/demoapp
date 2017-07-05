@@ -8,7 +8,7 @@
           {{else}}
               <table class="table table-bordered table-striped">
                 <thead>
-                  <th>Person</th><th>Month</th><th>Amount</th><th>Rent Status</th>
+                  <th>Person</th><th>Month</th><th>Amount</th><th>Rent Status</th><th>Edit Status</th>
                 </thead>
                 <tbody>
                   {{#each rent in house}}
@@ -23,12 +23,22 @@
     </div>
 </template>
 
+<!-- <template name="houserowEditable">
+    Edit <input type="checkbox" id="edit">
+
+    {{#if editting}}
+        {{> editHouseRow rent=rent}}
+    {{else}}
+        {{houserow rent=rent}}
+</template> -->
+
 <template name="houserow">
    <tr>
    	  <td><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> {{rent.name}} </td>
       <td>{{rent.date}}</td>
       <td>{{rent.amount}}</td>
    	  <td>{{rent.status}}</td>
+      <td><select><option>Owed</option><option>Paid</option><option>Late!</option></select></td>
 
    </tr>
 </template>

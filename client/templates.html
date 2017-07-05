@@ -5,14 +5,6 @@
 
 </head>
 
-<template name="addPerson">
-    Name: <input type="text" id="name"><br>
-    Email: <input type="text" id="email"><br><br>
-    <button id="addperson" class="btn btn-primary">
-      Add Roommate
-    </button><br><br>
-</template>
-
 <template name="layout">
   <div class="container">
     <h1>Roommate Helper</h1>
@@ -34,49 +26,4 @@
     <hr>
     {{> yield}} <!--this is where the page content goes-->
   </div>
-</template>
-
-<template name="showpeople">
-  <ul>
-  {{#each p in peoplelist}}
-    <li>{{> personrow person=p}}</li>
-  {{/each}}
-  </ul>
-</template>
-
-<template name="personrow">
-  {{person.name}}: {{person.email}}
-  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-</template>
-
-<template name="addTask">
-    <input type="text" id="type" value="Add Task"><br><br>
-    <button id="addtask" class="btn btn-sm btn-warning">
-      Create
-    </button><br><br>
-</template>
-
-<template name="showchores">
-
-  {{#each c in choreslist}}
-      {{> chorerow chore=c}}
-  {{/each}}
-
-</template>
-
-<template name="chorerow">
-  
-    <input type="checkbox"> {{chore.type}}<br>
-</template>
-
-<template name="addHouseTask">
-  <form>
-    <h3>Request</h3>
-      <input type="text" name="task" value="Task"> <br>
-
-    <h3>Message</h3>
-      <textarea rows="4" cols-lg="25">Message</textarea> <br><br>
-
-    <button class="btn btn-info btn-large js-chatsubmit">Submit</button><br><br>
-  </form>
 </template>
