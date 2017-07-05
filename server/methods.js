@@ -44,10 +44,14 @@ Meteor.methods({
 
   'rent.insert': function(rent){
       Rent.insert(rent);
+  },
+
+  'updatestatus':function(rent,status){
+    Rent.update(rent._id,{$set:{status:status}});
   }
 
   // 'rent.update': function(name, date, status, amount){
-  //     console.log('updated?');
-  //     Rent.update({name:id.name, date:id.date}, {$set:{amount:amount}});
-  // }
+  //      console.log('updated?');
+  //      Rent.update({name:id.name, date:id.date}, {$set:{amount:amount}});
+  //  }
 });

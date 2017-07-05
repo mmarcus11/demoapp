@@ -58,5 +58,13 @@ Template.houserow.events({
         //if (this.person.owner==Meteor.userId()){
           //Rent.remove(this.person._id);
         //}
+    },
+
+    'change select'(elt,instance){
+      console.dir(this);
+      console.log('changed!');
+      Meteor.call('updatestatus',this.rent,instance.$("select").val())
+      //Rent.update(this.rent._id,
+      //  {$set:{status:instance.$("select").val()}})
     }
 })
