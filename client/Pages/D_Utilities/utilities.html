@@ -2,23 +2,26 @@
 <div class="row">
   <div class="col-md-12 bg-info">
     <h1>Utilities</h1>
+    {{#if currentUser}}
     {{> addUtility}}
     <hr>
     <table class="table table-bordered table-striped">
-      <thead>
+      <thead><tr>
         <th>Utility Type</th><th> Per Person Amount</th><th> Due By:</th><th> Pay Back:</th>
-      </thead>
+      </tr></thead>
       <tbody>
         {{> showUtilities}}
       </tbody>
     </table>
-
+    {{else}}
+        Sorry you do not have access to this page. Please login or sign-up to view and manage utility payments!
+    {{/if}}
   </div>
 </div>
 </template>
 
 <template name="utilityRow">
-  <td>{{utility.name}}</td><td>{{utility.personAmt}}</td><td>{{utility.due}}</td><td>{{utility.payer}}</td>
+  <td><span class="glyphicon glyphicon-remove" id="remove"></span> {{utility.name}}</td><td>{{utility.personAmt}}</td><td>{{utility.due}}</td><td>{{utility.payer}}</td>
 </template>
 
 <template name="showUtilities">

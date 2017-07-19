@@ -1,16 +1,20 @@
 <template name="myhouse">
   <h1>My House</h1>
-  <main>
-    <div class="col-md-5 bg-info">
-      <br>
-      <strong>Place:</strong><a href="https://www.google.com/maps/place/Brandeis+University/@42.3654835,-71.2608896,17z/data=!3m1!4b1!4m5!3m4!1s0x89e38315e9bdb66f:0x235fbcb2d1e1f984!8m2!3d42.3646784!4d-71.2587951"> 123 Address St.</a>
-      <br>
-      <h2>Roommates:</h2>
-      {{> showpeople}}
-      <p>Add Roommate</p>
-      {{> addPerson}}
-    </div>
-  </main>
+  {{#if currentUser}}
+      <main>
+        <div class="col-md-5 bg-info">
+          <br>
+          <strong>Place:</strong><a href="https://www.google.com/maps/place/Brandeis+University/@42.3654835,-71.2608896,17z/data=!3m1!4b1!4m5!3m4!1s0x89e38315e9bdb66f:0x235fbcb2d1e1f984!8m2!3d42.3646784!4d-71.2587951"> 123 Address St.</a>
+          <br>
+          <h2>Roommates:</h2>
+          {{> showpeople}}
+          <p>Add Roommate</p>
+          {{> addPerson}}
+        </div>
+      </main>
+  {{else}}
+      Sorry you do not have access to this page. Please login or sign-up to view and manage roommates!
+  {{/if}}
 
 </template>
 

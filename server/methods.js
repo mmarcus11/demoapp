@@ -38,6 +38,10 @@ Meteor.methods({
       Utilities.insert(utility);
   },
 
+  'utility.remove': function(utility){
+      Utilities.remove(utility);
+  },
+
   'rent.remove': function(id){
       Rent.remove(id);
   },

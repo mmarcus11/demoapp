@@ -3,6 +3,7 @@ Meteor.subscribe("utilities");
 Template.showUtilities.helpers({
   utilityList() {return Utilities.find()},
 })
+
 // There is some sort of problem with this event!
 Template.addUtility.events({
     'click button'(elt,instance){
@@ -18,5 +19,11 @@ Template.addUtility.events({
           payer:payer
         }
         Meteor.call('utility.insert', utility);
-    }
+    },
+})
+
+Template.utilityRow.events({
+  'click #remove'(elt,instance) {
+      Meteor.call('utility.remove', this.utility._id);
+  },
 })
