@@ -1,21 +1,21 @@
+totalRent = 0;
 Meteor.subscribe("rent");
-
 const house =
 
 Template.rent.helpers({
    house: function(){
      return Rent.find();
+   },
+   rentVal: function(){
+     return totalRent;
    }
 
-  //  editor: function(){
-  //    if(document.getElementById('edit').checked) {
-  //      return true;
-  //      }
-  //    else {
-  //      return false;
-  //    }
-  //  }
+})
 
+Template.rent.events({
+    'click #saveR' (elt, instance) {
+      totalRent = instance.$('#tRent').val();
+    }
 })
 
 Template.edit.events({

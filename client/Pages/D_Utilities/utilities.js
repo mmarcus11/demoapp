@@ -12,11 +12,13 @@ Template.addUtility.events({
         const amt = instance.$('#amt').val();
         const due = instance.$('#due').val();
         const payer = instance.$('#payer').val();
+        const color = instance.$('#color').val();
         var utility = {
           name:name,
           personAmt:personAmt,
           due:due,
-          payer:payer
+          payer:payer,
+          color:color
         }
         Meteor.call('utility.insert', utility);
     },

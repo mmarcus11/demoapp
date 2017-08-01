@@ -7,7 +7,7 @@
     <hr>
     <table class="table table-bordered table-striped">
       <thead><tr>
-        <th>Utility Type</th><th> Per Person Amount</th><th> Due By:</th><th> Pay Back:</th>
+        <th>Color</th><th>Utility Type</th><th> Per Person Amount</th><th> Due By:</th><th> Pay Back:</th>
       </tr></thead>
       <tbody>
         {{> showUtilities}}
@@ -21,7 +21,7 @@
 </template>
 
 <template name="utilityRow">
-  <td><span class="glyphicon glyphicon-remove" id="remove"></span> {{utility.name}}</td><td>{{utility.personAmt}}</td><td>{{utility.due}}</td><td>{{utility.payer}}</td>
+  <td style="background:{{utility.color}}"></td><td><span class="glyphicon glyphicon-remove" id="remove"></span> {{utility.name}}</td><td>{{utility.personAmt}}</td><td>{{utility.due}}</td><td>{{utility.payer}}</td>
 </template>
 
 <template name="showUtilities">
@@ -31,11 +31,13 @@
 </template>
 
 <template name="addUtility">
-    <form>
-        Utility Name      <input type="text" id="name"><br>
-        Per Person Amount <input type="text" id="personAmt"><br>
-        Due Date          <input type="date" id="due"><br>
-        Payer             <input type="text" id="payer">
+    <form><table>
+        <tr><td>Utility Name</td> <td><input type="text" id="name"></td></tr>
+        <tr><td>Per Person Amount</td> <td><input type="text" id="personAmt"></td></tr>
+        <tr><td>Due Date </td> <td><input type="date" id="due" ></td></tr>
+        <tr><td>Payer</td> <td><input type="text" id="payer"></td></tr>
+        <tr><td>Color </td> <td> <input type="color" name="favcolor" id="color"></td></tr>
+    </table>
     </form><br>
     <button id="addUtility" class="btn btn-sm btn-danger">Add</button>
 </template>

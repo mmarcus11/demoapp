@@ -1,23 +1,21 @@
 <template name="rent">
     <div class="row">
         <div class="col-md-12 bg-info">
-          <h1>Rent</h1>
+          <h1>Rent <img src="/images/piggy.jpg" width="10%" class="img-rounded"></h1>
           {{#if currentUser}}
-                Edit <input type="checkbox" id="edit">
-                {{#if editor}}
-                    {{> edit}}
-                {{else}}
-                    <table class="table table-bordered table-striped">
-                      <thead>
-                        <tr><th>Person</th><th>Month</th><th>Amount</th><th>Rent Status</th><th>Edit Status</th></tr>
-                      </thead>
-                      <tbody>
-                        {{#each rent in house}}
-                          {{> houserow rent=rent}}
-                        {{/each}}
-                      </tbody>
-                    </table>
-                {{/if}}
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr><th>Person</th><th>Month</th><th>Amount</th><th>Rent Status</th><th>Edit Status</th></tr>
+                  </thead>
+                  <tbody>
+                    {{#each rent in house}}
+                      {{> houserow rent=rent}}
+                    {{/each}}
+                  </tbody>
+                  <tfoot>
+                    <tr><td>Total Rent: <input type="text" id="tRent" value={{rentVal}}> <button class="btn btn-primary" id="saveR">Save</button></td></tr>
+                  </tfoot>
+                </table>
                 <hr>
                 {{> edit}}
           {{else}}
@@ -57,5 +55,5 @@
       <input type="radio" name="status" value="Owed"> Owed<br>
       <input type="radio" name="status" value="Late!"> Late!<br><br>
     </form>
-    <button id='submit' class='btn btn-info'>Submit</button><button id='edit' class='btn btn-info'>Edit</button>
+    <button id='submit' class='btn btn-info'>Submit</button>
 </template>
